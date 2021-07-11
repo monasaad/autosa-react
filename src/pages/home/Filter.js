@@ -17,7 +17,7 @@ function Filter() {
     }
     return (
 
-        <div class="container" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'flex-end' }}>
+        <div class="container" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'flex-end', alignContent: 'flex-end' }}>
             <div class="item">
                 <p class="small ">ابحث برقم القطعة</p>
                 <input type='text' placeholder='ادخل رقم القطعة'></input>
@@ -48,7 +48,7 @@ function Filter() {
             </div>
 
             <div class="item">
-                <p class="small ">أو ارفع ملف اكسل</p>
+                <p class="small "></p>
                 <button style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                     <img style={{ marginLeft: '10px' }} src="./img/upload.svg" />
                     <p class="small">ارفع ملف اكسل</p>

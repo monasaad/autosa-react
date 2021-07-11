@@ -11,6 +11,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-family: 'Almarai', sans-serif;
   font-size: 12px;
+  max-width: 1280px;
 }
 
 .nav:hover{
@@ -74,7 +75,14 @@ table{
   width: 100%;
   border-radius: 10px;
   margin: 10px 0;
-  overflow: hidden;
+  /* overflow: hidden; */
+  /* display: block; */
+  white-space: nowrap;
+  /* width: 1000vw; */
+  /* max-width: -moz-fit-content; */
+  /* max-width: fit-content; */
+  /* margin: 0 auto; */
+  overflow-x: scroll;
 }
 th, td{
   padding: 15px;
@@ -152,9 +160,29 @@ select{
 
 /* ********************* footer ********************* */
 footer{
-  right: 0;
-  left: 0;
-  bottom: 1vh;
-  position: absolute;
   text-align: center;
+  padding: 20px;
+  font-size: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+  #logo{
+    width: 70px;
+  }
+  .break{
+    display: block;
+  }
+
+  #counter{
+    min-width: 90px;
+  }
+  #orderimg{
+    width: 300px;
+  }
+  #addressimg{
+    width: 200px;
+  }
+  h1{
+    font-size: 18px;
+  }
 }

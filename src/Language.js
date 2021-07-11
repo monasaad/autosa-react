@@ -1,7 +1,7 @@
 function Language() {
     return (
-        <div style={{ padding: '20px' }}>
-            <h1>تغيير اللغة</h1>
+        <div style={{ marginTop: '50px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+            <h1>قـريـبــًا ⚡️</h1>
         </div>
     );
 }

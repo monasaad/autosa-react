@@ -1,3 +1,4 @@
+import Data from './csvjson.json';
 function Table() {
     // handleChange(event) {
     //     this.setState({value: event.target.value});
@@ -28,13 +29,13 @@ function Table() {
     }
 
     return (
-        <div class="container" style={{}}>
+        <div class="container" style={{ overflowX: 'scroll' }}>
             <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between' }}>
                 <div class="item">
                     <h3>قائمة المنتجات</h3>
                 </div>
                 <div class="item">
-                    <p>1</p>
+
                 </div>
                 <div class="item">
                     <button onClick={show_hide} style={{ display: 'flex', justifyContent: 'space-evenly', alignItems: 'center' }}>
@@ -47,56 +48,42 @@ function Table() {
                     </div>
                 </div>
             </div>
-
-            <table>
-                <thead>
-                    <tr>
-                        <th>م</th>
-                        <th>رقم الصنف</th>
-                        <th>البيان</th>
-                        <th>السعر</th>
-                        <th>العدد</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>04111-0C098</td>
-                        <td>2T طقم وجيه هايلكس 2012/2006 بنزين</td>
-                        <td>355</td>
-                        <td><div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-evenly', margin: '-15px' }}>
-                            <button id="moins" onClick={minus} style={{ width: '25px', height: '25px', padding: '0px', fontSize: '20px', fontWeight: 'bolder', borderRadius: '20px', margin: '-15px' }}>-</button>
-                            {/* <input contentEditable="true" type="text" size="25" value={this.state.value} onChange={this.handleChange} id="count"  style={{ width: '50px', textAlign: 'center', padding: '10px 10px' }} /> */}
-                            <input contentEditable="true" type="text" size="25" value="0" id="count" style={{ width: '50px', height: '30px', textAlign: 'center', padding: '10px 10px' }} />
-                            <button id="plus" onClick={plus} style={{ width: '25px', height: '25px', padding: '0px', fontSize: '20px', fontWeight: 'bolder', borderRadius: '20px', margin: '-15px' }}>
-                                {/* <img src="./img/pin.svg" width="10px" style={{ display: 'block', margin: 'auto' }} /> */}
-                                <p style={{ margin: 'auto', textAlign: 'center' }} >+</p>
-                            </button>
-                        </div></td>
-                    </tr>
-
-                    <tr>
-                        <td>1</td>
-                        <td>04111-0C098</td>
-                        <td>2T طقم وجيه هايلكس 2012/2006 بنزين</td>
-                        <td>355</td>
-                        <td>
-                            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-evenly', margin: '-15px' }}>
-                                <button id="moins" onClick={minus} style={{ width: '25px', height: '25px', padding: '0px', fontSize: '20px', fontWeight: 'bolder', borderRadius: '20px', margin: '-15px' }}>-</button>
-                                {/* <input contentEditable="true" type="text" size="25" value={this.state.value} onChange={this.handleChange} id="count"  style={{ width: '50px', textAlign: 'center', padding: '10px 10px' }} /> */}
-                                <input contentEditable="true" type="text" size="25" value="0" id="count" style={{ width: '50px', height: '30px', textAlign: 'center', padding: '10px 10px' }} />
-                                <button id="plus" onClick={plus} style={{ width: '25px', height: '25px', padding: '0px', fontSize: '20px', fontWeight: 'bolder', borderRadius: '20px', margin: '-15px' }}>
-                                    {/* <img src="./img/pin.svg" width="10px" style={{ display: 'block', margin: 'auto' }} /> */}
-                                    <p style={{ margin: 'auto', textAlign: 'center' }} >+</p>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
-
-            </table>
+            <div style={{ overflowX: 'scroll', overflowY: 'scroll' }}>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>م</th>
+                            <th>رقم الصنف</th>
+                            <th>البيان</th>
+                            <th>السعر</th>
+                            <th>العدد</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {Data.Data.map((result) => (
+                            <tr>
+                                <td id="no">{result.no}</td>
+                                <td id="id">{result.id}</td>
+                                <td id="des">{result.des}</td>
+                                <td id="price">{result.price}</td>
+                                <td id="counter">
+                                    <div id="tablecount" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-evenly', margin: '-15px 0' }}>
+                                        <button class="moins" onClick={minus} style={{ width: '25px', height: '25px', padding: '0px', fontSize: '20px', fontWeight: 'bolder', borderRadius: '20px', margin: '-15px' }}>-</button>
+                                        <input contentEditable="true" type="text" size="25" value="0" id="count" style={{ width: '50px', height: '30px', textAlign: 'center', padding: '10px 10px', margin: '0 10px' }} />
+                                        <button class="plus" onClick={plus} style={{ width: '25px', height: '25px', padding: '0px', fontSize: '20px', fontWeight: 'bolder', borderRadius: '20px', margin: '-15px' }}>
+                                            <p style={{ margin: 'auto', textAlign: 'center' }} >+</p>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        ))
+                        }
+                    </tbody>
+                </table>
+            </div>
         </div>
     );
 }
 export default Table;
+
+

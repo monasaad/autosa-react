@@ -43,12 +43,12 @@ function Nav() {
                 <img id="img" src="./img/right-arrow.svg" width="15px" />
             </button>
 
-            <div style={{ display: 'flex', alignItems: 'center', flexDirection: 'column', justifyContent: 'space-evenly', height: '80vh', marginTop: '10px' }}>
-                <img style={{ marginTop: '50px' }} src='./img/logo.png' width='100px' />
+            <div style={{ display: 'flex', alignItems: 'center', flexDirection: 'column', justifyContent: 'space-evenly', height: '90vh', marginTop: '10px' }}>
+                <img id="logo" style={{ marginTop: '50px' }} src='./img/logo.png' width='100px' />
                 <nav>
                     {/* <Navs to="/home" img='./img/home.svg' para="الصفحة الرئيسية" id="sidetxt" />
                     <Navs to="/order" img='./img/order.svg' para="الطلبات" id="sidetxt1" /> */}
-                    <Navs to="/home" img='./img/home.svg' para="الصفحة الرئيسية" />
+                    <Navs to="/" img='./img/home.svg' para="الصفحة الرئيسية" />
                     <Navs to="/order" img='./img/order.svg' para="الطلبات" />
                     <Navs to="/address" img='./img/pin.svg' para="العناوين" />
                     <Navs to="/payment" img='./img/wallet.svg' para="طرق الدفع" />
@@ -56,6 +56,10 @@ function Nav() {
                     <Navs to="/language" img='./img/worlwide.svg' para="تغيير اللغة" />
                     <Navs to="/logout" img='./img/exit.svg' para="تسجيل الخروج" />
                 </nav>
+                <footer>جميع الحقوق محفوظة
+                    <span class="break">
+                        © 2021 Auto</span>
+                </footer>
 
 
             </div>
